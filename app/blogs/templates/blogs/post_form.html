@@ -1,0 +1,19 @@
+<!-- This form can be used for both - Create and Update the blog -->
+<!-- I used seperate form just to test how to set another template for Creating  blog -->
+
+{% extends "blogs/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Blog</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
